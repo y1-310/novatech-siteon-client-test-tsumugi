@@ -224,8 +224,8 @@
       min-width: 44px;
       min-height: 44px;
       padding: 0 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--r);
+      border: none;
+      border-radius: 8px;
       background: rgba(var(--bg-rgb), 0.92);
       color: var(--text);
       font: inherit;
@@ -265,9 +265,10 @@
       min-height: 48px;
       padding: 12px 20px;
       border: 1px solid transparent;
-      border-radius: var(--r);
+      border-radius: 8px !important;
       font-size: 0.92rem;
       font-weight: 500;
+      letter-spacing: 0.1em;
       line-height: 1.4;
       text-align: center;
       transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -279,15 +280,21 @@
     }
 
     .btn-primary {
-      background: var(--bg-dark);
-      color: var(--bg);
+      background: var(--accent);
+      color: #fff;
+      border: none;
       box-shadow: var(--shadow-card);
     }
 
     .btn-secondary {
       background: transparent;
-      color: var(--text);
-      border-color: var(--line);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: #fff;
     }
 
     .btn-ghost {
@@ -454,9 +461,11 @@
     }
 
     .concept-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-      gap: 40px;
+      display: block;
+    }
+
+    .concept-grid > * + * {
+      margin-top: 2rem;
     }
 
     .message-card,
@@ -518,15 +527,15 @@
     .salon-card {
       display: grid;
       background: var(--surface);
-      border: 1px solid var(--line);
       border-radius: var(--r);
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     }
 
     .salon-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 44px rgba(var(--bg-dark-rgb), 0.1);
+      background: rgba(var(--accent-rgb), 0.06);
     }
 
     .salon-card:hover .salon-card-image img {
@@ -718,9 +727,10 @@
       justify-content: center;
       min-height: 32px;
       align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--bg-alt);
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(var(--accent-rgb), 0.1);
+      border: none;
       color: var(--accent);
       font-weight: 500;
     }
@@ -930,7 +940,6 @@
       }
 
       .hero-content,
-      .concept-grid,
       .company-grid,
       .recruit-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -966,8 +975,8 @@
         right: 20px;
         padding: 20px;
         background: rgba(var(--bg-rgb), 0.98);
-        border: 1px solid var(--line);
-        border-radius: var(--r);
+        border: none;
+        border-radius: 8px;
         box-shadow: var(--shadow-soft);
       }
 
